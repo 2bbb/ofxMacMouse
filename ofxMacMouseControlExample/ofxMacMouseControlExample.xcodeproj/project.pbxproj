@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		950F4F591B55F3A7006C5215 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1F0A3A1BDC003C02F2 /* ofApp.cpp */; };
-		950F4F5E1B55F5BD006C5215 /* ofxMacMouseControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 950F4F5D1B55F5BD006C5215 /* ofxMacMouseControl.cpp */; };
+		95C82E101B5E47A0001391DF /* ofxMacMouseEventStealer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95C82E0E1B5E47A0001391DF /* ofxMacMouseEventStealer.cpp */; };
+		95C82E111B5E47C4001391DF /* ofxMacMouseControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 950F4F5D1B55F5BD006C5215 /* ofxMacMouseControl.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -61,6 +62,8 @@
 /* Begin PBXFileReference section */
 		950F4F5C1B55F5BD006C5215 /* ofxMacMouseControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMacMouseControl.h; sourceTree = "<group>"; };
 		950F4F5D1B55F5BD006C5215 /* ofxMacMouseControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMacMouseControl.cpp; sourceTree = "<group>"; };
+		95C82E0E1B5E47A0001391DF /* ofxMacMouseEventStealer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMacMouseEventStealer.cpp; sourceTree = "<group>"; };
+		95C82E0F1B5E47A0001391DF /* ofxMacMouseEventStealer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMacMouseEventStealer.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -116,6 +119,8 @@
 			children = (
 				950F4F5C1B55F5BD006C5215 /* ofxMacMouseControl.h */,
 				950F4F5D1B55F5BD006C5215 /* ofxMacMouseControl.cpp */,
+				95C82E0F1B5E47A0001391DF /* ofxMacMouseEventStealer.h */,
+				95C82E0E1B5E47A0001391DF /* ofxMacMouseEventStealer.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -301,7 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				950F4F591B55F3A7006C5215 /* ofApp.cpp in Sources */,
-				95C82E061B5E27CC001391DF /* ofxMacMouseStealer.cpp in Sources */,
+				95C82E111B5E47C4001391DF /* ofxMacMouseControl.cpp in Sources */,
+				95C82E101B5E47A0001391DF /* ofxMacMouseEventStealer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

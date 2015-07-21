@@ -1,5 +1,6 @@
 #include "ofMain.h"
 #include "ofxMacMouseControl.h"
+#include "ofxMacMouseEventStealer.h"
 
 class ofApp : public ofBaseApp {
 private:
@@ -11,6 +12,13 @@ public:
         ofEnableAntiAliasing();
         ofEnableSmoothing();
         bMouseMoving = false;
+        
+        ofxMacMouseStartStealMouseEvent();
+        ofAddListener(ofxMacMouseEvent, this, &ofApp::mouseEvent);
+    }
+    
+    void mouseEvent(ofxMacMouseEventArg &arg) {
+        ofLogNotice() << "global mouse position: " << arg.x << ", " << arg.y;
     }
     
     void update() {
