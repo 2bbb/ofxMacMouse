@@ -13,7 +13,6 @@ public:
         ofEnableSmoothing();
         bMouseMoving = false;
         
-        ofxMacMouseStartStealMouseEvent();
         ofAddListener(ofxMacMouseEvent, this, &ofApp::mouseEvent);
     }
     
@@ -32,11 +31,15 @@ public:
     void draw() {
         ofBackground(ofColor::black);
         ofSetColor(ofColor::white);
+        
         ofDrawBitmapString("space : triple click at cursor position.", 20, 20);
         ofDrawBitmapString("'p'   : press left button at cursor position.", 20, 50);
         ofDrawBitmapString("'r'   : release left button at cursor position.", 20, 80);
         ofDrawBitmapString("'m'   : start automatic mouse move.", 20, 110);
         
+        ofDrawBitmapString("'s'   : start listening global mouse event.", 20, 160);
+        ofDrawBitmapString("'S'   : stop listening global mouse event.", 20, 190);
+
         ofSetColor(ofColor::red);
         ofCircle(ofGetMouseX(), ofGetMouseY(), ofGetMousePressed() ? 100 : 10);
     }
@@ -59,6 +62,12 @@ public:
         }
         if(key == 'm') {
             bMouseMoving ^= true;
+        }
+        
+        if(key == 's') {
+            ofxMacMouseStartStealMouseEvent();
+        } else if(key == 'S') {
+            ofxMacMouseStopStealMouseEvent();
         }
     }
     

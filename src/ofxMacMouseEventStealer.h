@@ -29,6 +29,7 @@ namespace ofxMacMouseEventStealer {
     } ofxMacMouseEventArg;
 
     void ofxMacMouseStartStealMouseEvent();
+    void ofxMacMouseStopStealMouseEvent();
     extern ofEvent<ofxMacMouseEventArg> ofxMacMouseEvent;
 }
 

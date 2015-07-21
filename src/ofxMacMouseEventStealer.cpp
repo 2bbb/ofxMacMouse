@@ -68,7 +68,9 @@ namespace ofxMacMouseEventStealer {
         }
     }
     
+    CFMachPortRef mouseStealEvent = NULL;
     void ofxMacMouseStartStealMouseEvent() {
+        if(mouseStealEvent) return;
         // The screen size of the primary display.
         CGEventMask eventMask   = CGEventMaskBit(kCGEventLeftMouseDown)
                                 | CGEventMaskBit(kCGEventLeftMouseDragged)
@@ -80,16 +82,23 @@ namespace ofxMacMouseEventStealer {
                                 | CGEventMaskBit(kCGEventOtherMouseDragged)
                                 | CGEventMaskBit(kCGEventOtherMouseUp)
                                 | CGEventMaskBit(kCGEventMouseMoved);
-        CFMachPortRef eventTap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, eventMask, mouseStealer, NULL);
-        if (!eventTap) {
+        mouseStealEvent = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, eventMask, mouseStealer, NULL);
+        if (!mouseStealEvent) {
             fprintf(stderr, "failed to create event tap\n");
         }
         
-        CFRunLoopSourceRef runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0);
-        CFRelease(eventTap);
+        CFRunLoopSourceRef runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, mouseStealEvent, 0);
         
         CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
-        CGEventTapEnable(eventTap, true);
+        CGEventTapEnable(mouseStealEvent, true);
         CFRelease(runLoopSource);
+    }
+    
+    void ofxMacMouseStopStealMouseEvent() {
+        if(mouseStealEvent) {
+            CGEventTapEnable(mouseStealEvent, false);
+            CFRelease(mouseStealEvent);
+            mouseStealEvent = NULL;
+        }
     }
 }
