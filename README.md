@@ -1,4 +1,4 @@
-# ofxMacMouseControl
+# ofxMacMouse
 
 control mouse with program
 
@@ -57,6 +57,8 @@ target ofEvent
 	ofxMacMouseEventType eventType
 
 ## Update history
+
+### 2015/07/22 Rename from ofxMacMouseControl to ofxMacMouse
 
 ### 2015/07/21 ver 0.02 release
 

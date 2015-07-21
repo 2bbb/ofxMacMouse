@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950F4F591B55F3A7006C5215 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1F0A3A1BDC003C02F2 /* ofApp.cpp */; };
-		95C82E101B5E47A0001391DF /* ofxMacMouseEventStealer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95C82E0E1B5E47A0001391DF /* ofxMacMouseEventStealer.cpp */; };
-		95C82E111B5E47C4001391DF /* ofxMacMouseControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 950F4F5D1B55F5BD006C5215 /* ofxMacMouseControl.cpp */; };
+		3BE2C91284DB0FD92D44423B /* ofxMacMouseEventStealer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C1289A508E5A0EC535CE0 /* ofxMacMouseEventStealer.cpp */; };
+		74804170D0B56D987CE43D43 /* ofxMacMouseControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD81D43D0B624DB2BA20560B /* ofxMacMouseControl.cpp */; };
+		959D60951B5E8D8C000D7441 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 959D60941B5E8D8C000D7441 /* ofApp.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -60,11 +60,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		950F4F5C1B55F5BD006C5215 /* ofxMacMouseControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMacMouseControl.h; sourceTree = "<group>"; };
-		950F4F5D1B55F5BD006C5215 /* ofxMacMouseControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMacMouseControl.cpp; sourceTree = "<group>"; };
-		95C82E0E1B5E47A0001391DF /* ofxMacMouseEventStealer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMacMouseEventStealer.cpp; sourceTree = "<group>"; };
-		95C82E0F1B5E47A0001391DF /* ofxMacMouseEventStealer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMacMouseEventStealer.h; sourceTree = "<group>"; };
+		35A915AE5EB45C956A5F233C /* ofxMacMouseEventStealer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMacMouseEventStealer.h; path = ../../../addons/ofxMacMouse/src/ofxMacMouseEventStealer.h; sourceTree = SOURCE_ROOT; };
+		4DD9D0B36C02DA86E5B7044E /* ofxMacMouseControl.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMacMouseControl.h; path = ../../../addons/ofxMacMouse/src/ofxMacMouseControl.h; sourceTree = SOURCE_ROOT; };
+		5D2C1289A508E5A0EC535CE0 /* ofxMacMouseEventStealer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMacMouseEventStealer.cpp; path = ../../../addons/ofxMacMouse/src/ofxMacMouseEventStealer.cpp; sourceTree = SOURCE_ROOT; };
+		959D60941B5E8D8C000D7441 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
+		BD81D43D0B624DB2BA20560B /* ofxMacMouseControl.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMacMouseControl.cpp; path = ../../../addons/ofxMacMouse/src/ofxMacMouseControl.cpp; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -74,8 +75,7 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* ofxMacMouseControlExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofxMacMouseControlExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4B69E1F0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69B5B0A3A1756003C02F2 /* ofxMacMouseExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofxMacMouseExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -114,30 +114,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		950F4F5B1B55F5BD006C5215 /* src */ = {
+		9E9ACBF0FD3CC40340D97AB7 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				950F4F5C1B55F5BD006C5215 /* ofxMacMouseControl.h */,
-				950F4F5D1B55F5BD006C5215 /* ofxMacMouseControl.cpp */,
-				95C82E0F1B5E47A0001391DF /* ofxMacMouseEventStealer.h */,
-				95C82E0E1B5E47A0001391DF /* ofxMacMouseEventStealer.cpp */,
+				BD81D43D0B624DB2BA20560B /* ofxMacMouseControl.cpp */,
+				4DD9D0B36C02DA86E5B7044E /* ofxMacMouseControl.h */,
+				5D2C1289A508E5A0EC535CE0 /* ofxMacMouseEventStealer.cpp */,
+				35A915AE5EB45C956A5F233C /* ofxMacMouseEventStealer.h */,
 			);
-			path = src;
+			name = src;
 			sourceTree = "<group>";
 		};
-		95D2F17D1B537D4B007D7ED9 /* ofxMacMouseControl */ = {
+		A1BE04D75A320B4770AFBD85 /* ofxMacMouse */ = {
 			isa = PBXGroup;
 			children = (
-				950F4F5B1B55F5BD006C5215 /* src */,
+				9E9ACBF0FD3CC40340D97AB7 /* src */,
 			);
-			name = ofxMacMouseControl;
-			path = ../../../addons/ofxMacMouseControl;
+			name = ofxMacMouse;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				95D2F17D1B537D4B007D7ED9 /* ofxMacMouseControl */,
+				A1BE04D75A320B4770AFBD85 /* ofxMacMouse */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -197,14 +196,14 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
-				E4B69B5B0A3A1756003C02F2 /* ofxMacMouseControlExampleDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* ofxMacMouseExampleDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				E4B69E1F0A3A1BDC003C02F2 /* ofApp.cpp */,
+				959D60941B5E8D8C000D7441 /* ofApp.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -221,9 +220,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* ofxMacMouseControlExample */ = {
+		E4B69B5A0A3A1756003C02F2 /* ofxMacMouseExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "ofxMacMouseControlExample" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "ofxMacMouseExample" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
@@ -235,9 +234,9 @@
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = ofxMacMouseControlExample;
+			name = ofxMacMouseExample;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* ofxMacMouseControlExampleDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* ofxMacMouseExampleDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +247,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "ofxMacMouseControlExample" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "ofxMacMouseExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -269,7 +268,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* ofxMacMouseControlExample */,
+				E4B69B5A0A3A1756003C02F2 /* ofxMacMouseExample */,
 			);
 		};
 /* End PBXProject section */
@@ -305,9 +304,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950F4F591B55F3A7006C5215 /* ofApp.cpp in Sources */,
-				95C82E111B5E47C4001391DF /* ofxMacMouseControl.cpp in Sources */,
-				95C82E101B5E47A0001391DF /* ofxMacMouseEventStealer.cpp in Sources */,
+				74804170D0B56D987CE43D43 /* ofxMacMouseControl.cpp in Sources */,
+				959D60951B5E8D8C000D7441 /* ofApp.cpp in Sources */,
+				3BE2C91284DB0FD92D44423B /* ofxMacMouseEventStealer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +341,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxMacMouse/libs,
+					../../../addons/ofxMacMouse/src,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
@@ -373,6 +377,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxMacMouse/libs,
+					../../../addons/ofxMacMouse/src,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
@@ -557,7 +566,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "ofxMacMouseControlExample" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "ofxMacMouseExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -566,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "ofxMacMouseControlExample" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "ofxMacMouseExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,
