@@ -7,7 +7,7 @@
 
 #include "ofxMacMouseControl.h"
 
-#include <Cocoa/Cocoa.h>
+#include <ApplicationServices/ApplicationServices.h>
 
 namespace ofxMacMouseControl {
     int mouseDownEvents[] = {kCGEventLeftMouseDown, kCGEventRightMouseDown, kCGEventOtherMouseDown};
