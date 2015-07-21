@@ -16,9 +16,15 @@ control mouse with program
 #### void ofxMacMouseMove(ofxMacMouseButton button, int x, int y);
 #### void ofxMacMouseRelease(ofxMacMouseButton button, int x, int y);
 
+post press/move/release event.
+
 #### void ofxMacMouseClick(ofxMacMouseButton button, int x, int y, int num);
 
+post press + release _num_ times.
+
 #### void ofxMacSetCursorPosition(int x, int y);
+
+set cursor position without event.
 
 ### Steal Mouse Event
 
@@ -46,9 +52,9 @@ target ofEvent
 
 #### struct ofxMacMouseEventArg;
 
-* float x
-* float y
-* ofxMacMouseEventType eventType
+	float x
+	float y
+	ofxMacMouseEventType eventType
 
 ## Update history
 
