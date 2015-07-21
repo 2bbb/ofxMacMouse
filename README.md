@@ -4,20 +4,57 @@ control mouse with program
 
 ## API
 
-### enum ofxMacMouseButton
-* OFX_MAC_MOUSE_BUTTON_LEFT,
-* OFX_MAC_MOUSE_BUTTON_CENTER,
-* OFX_MAC_MOUSE_BUTTON_RIGHT
+### Control Mouse
 
-### void ofxMacMousePress(ofxMacMouseButton button, int x, int y);
-### void ofxMacMouseMove(ofxMacMouseButton button, int x, int y);
-### void ofxMacMouseRelease(ofxMacMouseButton button, int x, int y);
+#### enum ofxMacMouseButton
 
-### void ofxMacMouseClick(ofxMacMouseButton button, int x, int y, int num);
+	OFX_MAC_MOUSE_BUTTON_LEFT
+	OFX_MAC_MOUSE_BUTTON_CENTER
+	OFX_MAC_MOUSE_BUTTON_RIGHT
 
-### void ofxMacSetCursorPosition(int x, int y);
+#### void ofxMacMousePress(ofxMacMouseButton button, int x, int y);
+#### void ofxMacMouseMove(ofxMacMouseButton button, int x, int y);
+#### void ofxMacMouseRelease(ofxMacMouseButton button, int x, int y);
+
+#### void ofxMacMouseClick(ofxMacMouseButton button, int x, int y, int num);
+
+#### void ofxMacSetCursorPosition(int x, int y);
+
+### Steal Mouse Event
+
+#### enum ofxMacMouseEventType
+
+	OFX_MAC_MOUSE_EVENT_LEFT_BUTTON_DOWN
+	OFX_MAC_MOUSE_EVENT_LEFT_BUTTON_DRAGGED
+	OFX_MAC_MOUSE_EVENT_LEFT_BUTTON_UP
+	OFX_MAC_MOUSE_EVENT_RIGHT_BUTTON_DOWN
+	OFX_MAC_MOUSE_EVENT_RIGHT_BUTTON_DRAGGED
+	OFX_MAC_MOUSE_EVENT_RIGHT_BUTTON_UP
+	OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_DOWN
+	OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_DRAGGED
+	OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_UP
+	OFX_MAC_MOUSE_EVENT_MOVED
+
+#### void ofxMacMouseStartStealMouseEvent();
+#### void ofxMacMouseStopStealMouseEvent();
+
+start/stop listeing callback.
+
+#### ofEvent<ofxMacMouseEventArg> ofxMacMouseEvent;
+
+target ofEvent
+
+#### struct ofxMacMouseEventArg;
+
+* float x
+* float y
+* ofxMacMouseEventType eventType
 
 ## Update history
+
+### 2015/07/21 ver 0.02 release
+
+* add ofxMacMouseEventStealer
 
 ### 2015/07/15 ver 0.01 release
 
