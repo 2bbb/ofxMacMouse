@@ -14,10 +14,15 @@ public:
         bMouseMoving = false;
         
         ofAddListener(ofxMacMouseEvent, this, &ofApp::mouseEvent);
+        ofAddListener(ofxMacMouseScrollWheelEvent, this, &ofApp::scrollWheelEvent);
     }
     
     void mouseEvent(ofxMacMouseEventArg &arg) {
         ofLogNotice() << "global mouse position: " << arg.x << ", " << arg.y;
+    }
+    
+    void scrollWheelEvent(ofxMacMouseScrollWheelEventArg &arg) {
+        ofLogNotice() << "global scroll wheel event: " << arg.delta.x << ", " << arg.delta.y;
     }
     
     void update() {
@@ -26,6 +31,7 @@ public:
             int y = ofGetWindowPositionY() + ofGetHeight()  * (0.5f + 0.4f * sin(ofGetElapsedTimef()));
             ofxMacMouseMove(OFX_MAC_MOUSE_BUTTON_LEFT, x, y);
         }
+        ofxMacMouseMoveScrollWheelLine(0, -8, 0);
     }
     
     void draw() {
@@ -41,7 +47,11 @@ public:
         ofDrawBitmapString("'S'   : stop listening global mouse event.", 20, 190);
 
         ofSetColor(ofColor::red);
+#if (OF_VERSION_MAJOR < 1) && (OF_VERSION_MINOR < 9)
         ofCircle(ofGetMouseX(), ofGetMouseY(), ofGetMousePressed() ? 100 : 10);
+#else 
+        ofDrawCircle(ofGetMouseX(), ofGetMouseY(), ofGetMousePressed() ? 100 : 10);
+#endif
     }
 
     void keyPressed(int key){
