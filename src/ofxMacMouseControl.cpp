@@ -10,9 +10,9 @@
 #include <ApplicationServices/ApplicationServices.h>
 
 namespace ofxMacMouseControl {
-    int mouseDownEvents[] = {kCGEventLeftMouseDown, kCGEventRightMouseDown, kCGEventOtherMouseDown};
-    int mouseUpEvents[] = {kCGEventLeftMouseUp, kCGEventRightMouseUp, kCGEventOtherMouseUp};
-    int mouseButtons[] = {kCGMouseButtonLeft, kCGMouseButtonRight, kCGMouseButtonCenter};
+    CGEventType mouseDownEvents[] = {kCGEventLeftMouseDown, kCGEventRightMouseDown, kCGEventOtherMouseDown};
+    CGEventType mouseUpEvents[] = {kCGEventLeftMouseUp, kCGEventRightMouseUp, kCGEventOtherMouseUp};
+    CGMouseButton mouseButtons[] = {kCGMouseButtonLeft, kCGMouseButtonRight, kCGMouseButtonCenter};
     
     void ofxMacMousePress(ofxMacMouseButton button, int x, int y) {
         CGEventRef event = CGEventCreateMouseEvent(NULL, mouseDownEvents[button], CGPointMake(x, y), mouseButtons[button]);
@@ -34,7 +34,7 @@ namespace ofxMacMouseControl {
     }
     
     void mouseEvent(CGEventRef event, int eventType) {
-        CGEventSetType(event, eventType);
+        CGEventSetType(event, (CGEventType) eventType);
         CGEventPost(kCGHIDEventTap, event);
     }
     
