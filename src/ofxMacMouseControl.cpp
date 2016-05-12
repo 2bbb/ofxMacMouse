@@ -52,4 +52,18 @@ namespace ofxMacMouseControl {
     void ofxMacSetCursorPosition(int x, int y) {
         CGWarpMouseCursorPosition(CGPointMake(x, y));
     }
+    
+    void ofxMacMouseMoveScrollWheelLine(std::int32_t dx, std::int32_t dy, std::int32_t dz) {
+        CGWheelCount wheelCount = 3;
+        CGEventRef event = CGEventCreateScrollWheelEvent(NULL, kCGScrollEventUnitLine, wheelCount, dy, dx, dz);
+        CGEventPost(kCGHIDEventTap, event);
+        CFRelease(event);
+    }
+    
+    void ofxMacMouseMoveScrollWheelPixel(std::int32_t dx, std::int32_t dy, std::int32_t dz) {
+        CGWheelCount wheelCount = 3;
+        CGEventRef event = CGEventCreateScrollWheelEvent(NULL, kCGScrollEventUnitPixel, wheelCount, dy, dx, dz);
+        CGEventPost(kCGHIDEventTap, event);
+        CFRelease(event);
+    }
 }

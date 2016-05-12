@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include <cstdint>
+
 // ref: https://github.com/BlueM/cliclick
 namespace ofxMacMouseControl {
     typedef enum {
@@ -22,6 +24,9 @@ namespace ofxMacMouseControl {
     void ofxMacMouseClick(ofxMacMouseButton button, int x, int y, int num);
 
     void ofxMacSetCursorPosition(int x, int y);
+    
+    void ofxMacMouseMoveScrollWheelLine(std::int32_t dx, std::int32_t dy, std::int32_t dz = 0);
+    void ofxMacMouseMoveScrollWheelPixel(std::int32_t dx, std::int32_t dy, std::int32_t dz = 0);
 }
 
 using namespace ofxMacMouseControl;
