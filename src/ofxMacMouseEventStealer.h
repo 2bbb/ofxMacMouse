@@ -19,7 +19,7 @@ namespace ofxMacMouseEventStealer {
         OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_DOWN,
         OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_DRAGGED,
         OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_UP,
-        OFX_MAC_MOUSE_EVENT_MOVED,
+        OFX_MAC_MOUSE_EVENT_MOVED
     } ofxMacMouseEventType;
     
     typedef struct {
@@ -27,10 +27,18 @@ namespace ofxMacMouseEventStealer {
         float y;
         ofxMacMouseEventType eventType;
     } ofxMacMouseEventArg;
-
+    
+    typedef struct {
+        bool isContinuous;
+        ofVec3f delta;
+        ofVec3f pointDelta;
+        ofVec3f pixelDelta;
+    } ofxMacMouseScrollWheelEventArg;
+    
     void ofxMacMouseStartStealMouseEvent();
     void ofxMacMouseStopStealMouseEvent();
     extern ofEvent<ofxMacMouseEventArg> ofxMacMouseEvent;
+    extern ofEvent<ofxMacMouseScrollWheelEventArg> ofxMacMouseScrollWheelEvent;
 }
 
 using namespace ofxMacMouseEventStealer;
