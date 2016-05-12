@@ -59,8 +59,8 @@ namespace ofxMacMouseEventStealer {
             }
             CGPoint location = CGEventGetLocation(event);
             ofxMacMouseEventArg arg = (ofxMacMouseEventArg){
-                .x = location.x,
-                .y = location.y,
+                .x = (float) location.x,
+                .y = (float) location.y,
                 .eventType = mouseEvent
             };
             ofNotifyEvent(ofxMacMouseEvent, arg);
