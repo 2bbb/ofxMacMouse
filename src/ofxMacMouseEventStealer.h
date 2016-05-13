@@ -39,6 +39,8 @@ namespace ofxMacMouseEventStealer {
     void ofxMacMouseStopStealMouseEvent();
     extern ofEvent<ofxMacMouseEventArg> ofxMacMouseEvent;
     extern ofEvent<ofxMacMouseScrollWheelEventArg> ofxMacMouseScrollWheelEvent;
+    
+    ofxMacMouseEventArg ofxMacMouseGetCurrentMousePosition();
 }
 
 using namespace ofxMacMouseEventStealer;
