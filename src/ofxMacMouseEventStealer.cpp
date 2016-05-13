@@ -101,4 +101,14 @@ namespace ofxMacMouseEventStealer {
             mouseStealEvent = NULL;
         }
     }
+    
+    ofxMacMouseEventArg ofxMacMouseGetCurrentMousePosition() {
+        CGEventRef ourEvent = CGEventCreate(NULL);
+        CGPoint point = CGEventGetLocation(ourEvent);
+        ofxMacMouseEventArg arg;
+        arg.x = point.x;
+        arg.y = point.y;
+        
+        return arg;
+    }
 }

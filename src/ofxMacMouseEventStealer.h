@@ -19,7 +19,7 @@ namespace ofxMacMouseEventStealer {
         OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_DOWN,
         OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_DRAGGED,
         OFX_MAC_MOUSE_EVENT_OTHER_BUTTON_UP,
-        OFX_MAC_MOUSE_EVENT_MOVED,
+        OFX_MAC_MOUSE_EVENT_MOVED
     } ofxMacMouseEventType;
     
     typedef struct {
@@ -31,6 +31,8 @@ namespace ofxMacMouseEventStealer {
     void ofxMacMouseStartStealMouseEvent();
     void ofxMacMouseStopStealMouseEvent();
     extern ofEvent<ofxMacMouseEventArg> ofxMacMouseEvent;
+    
+    ofxMacMouseEventArg ofxMacMouseGetCurrentMousePosition();
 }
 
 using namespace ofxMacMouseEventStealer;
