@@ -11,26 +11,40 @@
 
 namespace ofxMacMouseControl {
     CGEventType mouseDownEvents[] = {kCGEventLeftMouseDown, kCGEventRightMouseDown, kCGEventOtherMouseDown};
+    CGEventType mouseDraggedEvents[] = {kCGEventLeftMouseDragged, kCGEventRightMouseDragged, kCGEventOtherMouseDragged};
     CGEventType mouseUpEvents[] = {kCGEventLeftMouseUp, kCGEventRightMouseUp, kCGEventOtherMouseUp};
     CGMouseButton mouseButtons[] = {kCGMouseButtonLeft, kCGMouseButtonRight, kCGMouseButtonCenter};
     
-    void ofxMacMousePress(ofxMacMouseButton button, int x, int y) {
-        CGEventRef event = CGEventCreateMouseEvent(NULL, mouseDownEvents[button], CGPointMake(x, y), mouseButtons[button]);
-        CGEventPost(kCGHIDEventTap, event);
-        CFRelease(event);
-    }
-    
     void ofxMacMouseMove(ofxMacMouseButton button, int x, int y) {
-        CGEventRef move = CGEventCreateMouseEvent(NULL, kCGEventMouseMoved, CGPointMake(x, y), mouseButtons[button]);
+        CGEventSourceRef eventSource  = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
+        CGEventRef move = CGEventCreateMouseEvent(eventSource, kCGEventMouseMoved, CGPointMake(x, y), mouseButtons[button]);
         CGEventPost(kCGHIDEventTap, move);
         CFRelease(move);
+        CFRelease(eventSource);
     }
     
-    
-    void ofxMacMouseRelease(ofxMacMouseButton button, int x, int y) {
-        CGEventRef event = CGEventCreateMouseEvent(NULL, mouseUpEvents[button], CGPointMake(x, y), mouseButtons[button]);
+    void ofxMacMousePress(ofxMacMouseButton button, int x, int y) {
+        CGEventSourceRef eventSource  = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
+        CGEventRef event = CGEventCreateMouseEvent(eventSource, mouseDownEvents[button], CGPointMake(x, y), mouseButtons[button]);
         CGEventPost(kCGHIDEventTap, event);
         CFRelease(event);
+        CFRelease(eventSource);
+    }
+    
+    void ofxMacMouseDrag(ofxMacMouseButton button, int x, int y) {
+        CGEventSourceRef eventSource  = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
+        CGEventRef event = CGEventCreateMouseEvent(eventSource, mouseDraggedEvents[button], CGPointMake(x, y), mouseButtons[button]);
+        CGEventPost(kCGHIDEventTap, event);
+        CFRelease(event);
+        CFRelease(eventSource);
+    }
+
+    void ofxMacMouseRelease(ofxMacMouseButton button, int x, int y) {
+        CGEventSourceRef eventSource  = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
+        CGEventRef event = CGEventCreateMouseEvent(eventSource, mouseUpEvents[button], CGPointMake(x, y), mouseButtons[button]);
+        CGEventPost(kCGHIDEventTap, event);
+        CFRelease(event);
+        CFRelease(eventSource);
     }
     
     void mouseEvent(CGEventRef event, int eventType) {
@@ -39,7 +53,8 @@ namespace ofxMacMouseControl {
     }
     
     void ofxMacMouseClick(ofxMacMouseButton button, int x, int y, int num) {
-        CGEventRef event = CGEventCreateMouseEvent(NULL, mouseDownEvents[button], CGPointMake(x, y), mouseButtons[button]);
+        CGEventSourceRef eventSource  = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
+        CGEventRef event = CGEventCreateMouseEvent(eventSource, mouseDownEvents[button], CGPointMake(x, y), mouseButtons[button]);
         for(int i = 1; i < num + 1; i++) {
             CGEventSetIntegerValueField(event, kCGMouseEventClickState, i);
             mouseEvent(event, mouseDownEvents[button]);
@@ -47,6 +62,7 @@ namespace ofxMacMouseControl {
         }
         
         CFRelease(event);
+        CFRelease(eventSource);
     }
     
     void ofxMacSetCursorPosition(int x, int y) {
@@ -54,16 +70,20 @@ namespace ofxMacMouseControl {
     }
     
     void ofxMacMouseMoveScrollWheelLine(std::int32_t dx, std::int32_t dy, std::int32_t dz) {
+        CGEventSourceRef eventSource  = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
         CGWheelCount wheelCount = 3;
-        CGEventRef event = CGEventCreateScrollWheelEvent(NULL, kCGScrollEventUnitLine, wheelCount, dy, dx, dz);
+        CGEventRef event = CGEventCreateScrollWheelEvent(eventSource, kCGScrollEventUnitLine, wheelCount, dy, dx, dz);
         CGEventPost(kCGHIDEventTap, event);
         CFRelease(event);
+        CFRelease(eventSource);
     }
     
     void ofxMacMouseMoveScrollWheelPixel(std::int32_t dx, std::int32_t dy, std::int32_t dz) {
+        CGEventSourceRef eventSource  = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
         CGWheelCount wheelCount = 3;
-        CGEventRef event = CGEventCreateScrollWheelEvent(NULL, kCGScrollEventUnitPixel, wheelCount, dy, dx, dz);
+        CGEventRef event = CGEventCreateScrollWheelEvent(eventSource, kCGScrollEventUnitPixel, wheelCount, dy, dx, dz);
         CGEventPost(kCGHIDEventTap, event);
         CFRelease(event);
+        CFRelease(eventSource);
     }
 }

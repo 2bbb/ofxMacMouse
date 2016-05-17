@@ -17,8 +17,10 @@ namespace ofxMacMouseControl {
         OFX_MAC_MOUSE_BUTTON_RIGHT
     } ofxMacMouseButton;
 
-    void ofxMacMousePress(ofxMacMouseButton button, int x, int y);
     void ofxMacMouseMove(ofxMacMouseButton button, int x, int y);
+    
+    void ofxMacMousePress(ofxMacMouseButton button, int x, int y);
+    void ofxMacMouseDrag(ofxMacMouseButton button, int x, int y);
     void ofxMacMouseRelease(ofxMacMouseButton button, int x, int y);
 
     void ofxMacMouseClick(ofxMacMouseButton button, int x, int y, int num);
