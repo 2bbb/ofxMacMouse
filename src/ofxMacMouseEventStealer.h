@@ -7,6 +7,7 @@
 
 #pragma once
 #include "ofEvents.h"
+#include "ofVectorMath.h"
 
 namespace ofxMacMouseEventStealer {
     typedef enum {
